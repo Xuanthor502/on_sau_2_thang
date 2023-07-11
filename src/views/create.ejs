@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="create_a_user">Create</a>
+        <a href="read_user">Read</a>
+        <a href="#about">About</a>
+      </div>
+    <div class="form"> 
+      <form action="/success_create" method="post">
+        <fieldset>
+          <legend>Infor</legend>
+
+          <div class="gropInput" >
+            <label >Email:</label>
+            <input type="text" name="email"><br><br>
+          </div>
+          
+          <div class="gropInput">
+            <label >Name:</label>
+            <input type="text"  name="name"><br><br>
+          </div>
+          
+          <div class="gropInput">
+            <label >City:</label>
+            <input type="text"  name="city"><br><br>
+          </div>
+          
+          <div>
+            <input type="submit" value="Submit">
+          </div>
+          
+        </fieldset>
+      </form>
+    </div>
+</body>
+</html>

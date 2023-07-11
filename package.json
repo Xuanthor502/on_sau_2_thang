@@ -1,0 +1,29 @@
+{
+  "name": "on_lai_sau_2_thang",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000o\u0000n\u0000_\u0000l\u0000a\u0000i\u0000_\u0000s\u0000a\u0000u\u0000_\u00002\u0000_\u0000t\u0000h\u0000a\u0000n\u0000g\u0000\r\u0000 \u0000#\u0000 \u0000o\u0000n\u0000_\u0000l\u0000a\u0000i\u0000_\u0000s\u0000a\u0000u\u0000_\u00002\u0000_\u0000t\u0000h\u0000a\u0000n\u0000g\u0000\r\u0000 \u0000#\u0000 \u0000o\u0000n\u0000_\u0000l\u0000a\u0000i\u0000_\u0000s\u0000a\u0000u\u0000_\u00002\u0000_\u0000t\u0000h\u0000a\u0000n\u0000g\u0000\r\u0000 \u0000",
+  "main": "sever.js",
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "ejs": "3.1.8",
+    "express": "4.18.2",
+    "mysql2": "2.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/sever.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xuanthor502/on_sau_2_thang.git"
+  },
+  "author": "xuanthor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xuanthor502/on_sau_2_thang.git/issues"
+  },
+  "homepage": "https://github.com/Xuanthor502/on_sau_2_thang.git#readme"
+}
