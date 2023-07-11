@@ -1,4 +1,5 @@
 const connection = require("../config/database.js")
+const User = require('../models/user.js')
 const sample = (req, res) => {
         res.render("sample.ejs")
       }
@@ -15,44 +16,42 @@ const port_a_user =async (req,res)=>{
     const name = req.body.name;
     const city = req.body.city;
     console.log(email)
-    console.log(name)
-    console.log(city)
-    let [results,feild]= await connection.query(
-       `insert into Users(email,name,city) values(?,?,?)`,
-        [email,name,city],
-        )
-        res.redirect('/')
+   await User.create({
+        email: email,
+        name: name,
+        city:city
+    })
+    res.send("oki la con de")
 }
 const get_read_user = async(req,res)=>{
-    let [results]= await connection.query( `select * from Users `)
+    let results= await User.find({});
     res.render("read.ejs",{listUser: results})
 }
 const getUpdateUser = async(req,res)=>{
-    let UsersId =  req.params.id;
-    let [results]= await connection.query( `select * from Users where id=?`,[UsersId],)
-    let user=  results && results.length > 0? results[0] :{};
-    res.render("update.ejs",{listUser: user})
+    const UsersId =  req.params.id;
+    let user= await User.findById(UsersId).exec()
+     res.render("update.ejs",{listUser: user})
 }
 const post_update_a_user = async(req,res)=>{
     const id = req.body.id;
     const email = req.body.email;
     const name = req.body.name;
-    const city = req.body.city;
-    await connection.query( `UPDATE Users
-    SET email = ? , name= ?,city= ?
-    WHERE id = ?; `,[email,name,city,id]) 
+    const city = req.body.city
+    await User.updateOne({_id:id},{email:email,name:name,city:city})
     res.send("oki la con de")
 }
 
 const post_delete_a_user = async(req,res)=>{
     let UsersId =  req.params.id;
-    let [results]= await connection.query( `select * from Users where id=?`,[UsersId],)
-    let user=  results && results.length > 0? results[0] :{};
+    
+    let user= await User.findById(UsersId).exec()
     res.render("delete.ejs",{listUser: user})
 }
 const post_success_delete_a_user = async(req,res)=>{
     const id = req.body.id;
-    await connection.query( `DELETE FROM Users where id=?; `,[id]) 
+    await User.deleteOne({
+        _id:id
+    })
     res.send("oki la con de")
 }
 module.exports= {

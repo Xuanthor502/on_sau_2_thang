@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   mongo:
-    container_name: mongo
+    container_name: mongo_on_lai_sau_2_thang
     image: ${MONGO_DB_IMAGE}
     environment:
       - MONGODB_ROOT_USERNAME=${MONGO_DB_ROOT_USERNAME}
@@ -16,7 +16,7 @@ services:
 
   mongo-express:
     image: ${MONGO_EXPRESS_IMAGE}
-    container_name: mexpress
+    container_name: mexpress_on_lai_sau_2_thang
     environment:
       - ME_CONFIG_MONGODB_ENABLE_ADMIN=${WEB_MONGODB_ENABLE_ADMIN}
       - ME_CONFIG_MONGODB_URL=${WEB_MONGODB_URL}
