@@ -5,15 +5,15 @@ const upLoadSingleFile = async(image)=>{
     try {
       await image.mv(uploadPath);
       return{
-          status: true,
-          path:"link-path",
-          error: null
-      }
+        status: 'success',
+        path: uploadPath,
+        error: null
+    }
     } catch (error) {
       return{
           status:  fall,
           path: null,
-          error: true
+          error: JSON.string(error) 
       }
     }
 }
